@@ -25,6 +25,8 @@ void TestList::RunAllTests()
 	TestIteratorGetCurrentElement();
 	TestIteratorGetCurrent();
 	TestIteratorSetCurrent();
+
+	system("pause");
 }
 
 void TestList::TestListPushBack()

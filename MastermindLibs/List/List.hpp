@@ -3,6 +3,7 @@
 template <class TYPE>
 List<TYPE>::List()
 {
+	this->nbElements = 0;
 	first = last = NULL;
 }
 
@@ -60,7 +61,14 @@ template <class TYPE>
 void List<TYPE>::Erase(Iterator<TYPE>& _Iter)
 {
     //4 cas possibles... A vous de les trouver!
-	if (_Iter.GetCurrent() == first)
+	if (first == last)
+	{
+		delete _Iter.GetCurrent();
+		_Iter.SetCurrent(NULL);
+		first = last = NULL;
+	}
+	
+	else if (_Iter.GetCurrent() == first)
 	{
 		first = _Iter.GetCurrent()->Next;
 		first->Previous = NULL;
@@ -74,12 +82,7 @@ void List<TYPE>::Erase(Iterator<TYPE>& _Iter)
 		delete _Iter.GetCurrent();
 		_Iter.SetCurrent(last);
 	}
-	else if (first == last)
-	{
-		delete _Iter.GetCurrent();
-		_Iter.SetCurrent(NULL);
-		first = last = NULL;
-	}
+	
 	else
 	{
 		_Iter.GetCurrent()->Previous->Next = _Iter.GetCurrent()->Next;
