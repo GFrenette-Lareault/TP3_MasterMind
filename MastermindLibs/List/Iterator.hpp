@@ -8,10 +8,7 @@ Iterator<TYPE>::Iterator(void)
 template <class TYPE>
 void Iterator<TYPE>::Next(void)
 {
-	if (current->Next != NULL)
-	{
 		current = current->Next;
-	}
 }
 
 template <class TYPE>

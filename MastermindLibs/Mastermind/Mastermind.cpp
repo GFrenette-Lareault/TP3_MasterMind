@@ -53,12 +53,27 @@ ArrayI<Color>* Mastermind::GetElement() const
 
 short Mastermind::CleanList(Color* _tabColorRef, short* _tabVerdicts)
 {
+	Color* tabTentee = _tabColorRef;
+	short* tabVerdicts = _tabVerdicts;
+	Color couleurVerdict;
+	Iterator<ArrayI<Color>> iter;
+	for (int i = 0; i < 4; i++)
+	{
 
-     /*switch(tabVerdicts[i]){
+     switch(_tabVerdicts[i])
+	 {
                 
                 case 1: //Bonne couleur, bonne place
 
                         //Si la séquence de couleurs traitée n'a pas la couleur à la bonne place, il faut la retirer de la liste.
+					while (iter.GetCurrent() != NULL)
+					{
+						couleurVerdict = _tabColorRef[i];
+						if (couleurVerdict.operator==(iter.GetCurrentElement()->GetElement(i)))
+						{
+							
+						}
+					}
 
                 case 2: //Bonne couleur, mauvaise place
 
@@ -67,6 +82,8 @@ short Mastermind::CleanList(Color* _tabColorRef, short* _tabVerdicts)
            
                 case 3: //Mauvaise couleur
                         //Si la séquence de couleurs traitée a la couleur, il faut la retirer de la liste.
-    };*/
+    };
+
+	}
     return 1; //Pour Compiler
 }
