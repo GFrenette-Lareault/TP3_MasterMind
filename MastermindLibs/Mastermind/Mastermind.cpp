@@ -40,7 +40,11 @@ Mastermind::~Mastermind()
 
 int Mastermind::GetNbElements() const
 {
-    return 1;
+	if (list != NULL)
+	{
+		return list->GetNbElements();
+	}
+	return 0;
 }
 
 
