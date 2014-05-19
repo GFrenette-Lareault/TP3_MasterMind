@@ -1,0 +1,15 @@
+*.sdf
+MastermindLibs/MastermindLibs.sdf
+MastermindLibs/ArrayI/Release/ArrayI.log
+MastermindLibs/MastermindLibs.sdf
+MastermindLibs/List/Release/List.log
+MastermindLibs/Mastermind/Release/CL.read.1.tlog
+*.tlog
+*.obj
+*.lastbuildstate
+*.log
+*.unsuccessfulbuild
+*.pdb
+*.opensdf
+MastermindLibs/MastermindLibs.sdf
+MastermindLibs/MastermindLibs.sdf

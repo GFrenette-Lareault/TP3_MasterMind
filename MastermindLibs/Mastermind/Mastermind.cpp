@@ -70,23 +70,37 @@ short Mastermind::CleanList(Color* _tabColorRef, short* _tabVerdicts)
                 case 1: //Bonne couleur, bonne place
 
                         //Si la séquence de couleurs traitée n'a pas la couleur à la bonne place, il faut la retirer de la liste.
-					while (iter.GetCurrent() != NULL)
-					{
-						couleurVerdict = _tabColorRef[i];
-						if (couleurVerdict.operator==(iter.GetCurrentElement()->GetElement(i)))
+						while (iter.GetCurrent() != NULL)
 						{
-							
+							couleurVerdict = _tabColorRef[i];
+							if (!(couleurVerdict.operator==(iter.GetCurrentElement()->GetElement(i))))
+							{
+								list->Erase(iter);
+							}
+							iter.Next();
 						}
-					}
 
                 case 2: //Bonne couleur, mauvaise place
 
                         //Si la séquence de couleurs traitée n'a pas la couleur à un autre emplacement que celui de la couleur de référence,
                         //il faut la retirer de la liste.
+						
            
                 case 3: //Mauvaise couleur
                         //Si la séquence de couleurs traitée a la couleur, il faut la retirer de la liste.
-    };
+					while (iter.GetCurrent() != NULL)
+					{
+						couleurVerdict = _tabColorRef[i];
+						for (int j = 0; j < 4; j++)
+						{
+							if (couleurVerdict.operator==(iter.GetCurrentElement()->GetElement(j)))
+							{
+								list->Erase(iter);
+							}
+						}
+						iter.Next();
+					}
+	 };
 
 	}
     return 1; //Pour Compiler
