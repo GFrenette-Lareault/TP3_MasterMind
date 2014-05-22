@@ -71,7 +71,7 @@ short Mastermind::CleanList(Color* _tabColorRef, short* _tabVerdicts)
 						while (iter.GetCurrent() != NULL)
 						{
 							couleurVerdict = _tabColorRef[i];
-							if (!(couleurVerdict.operator==(iter.GetCurrentElement()->GetElement(i))))
+							if (couleurVerdict!=(iter.GetCurrentElement()->GetElement(i)))
 							{
 								list->Erase(iter);
 							}
@@ -85,7 +85,7 @@ short Mastermind::CleanList(Color* _tabColorRef, short* _tabVerdicts)
 						while (iter.GetCurrent() != NULL)
 						{
 							couleurVerdict = _tabColorRef[i];
-							if (couleurVerdict.operator==(iter.GetCurrentElement()->GetElement(i)))
+							if (couleurVerdict==(iter.GetCurrentElement()->GetElement(i)))
 							{
 								list->Erase(iter);
 							}
@@ -101,7 +101,7 @@ short Mastermind::CleanList(Color* _tabColorRef, short* _tabVerdicts)
 							couleurVerdict = _tabColorRef[i];
 							for (int j = 0; j < 4; j++)
 							{
-								if (couleurVerdict.operator==(iter.GetCurrentElement()->GetElement(j)))
+								if (couleurVerdict==(iter.GetCurrentElement()->GetElement(j)))
 								{
 									list->Erase(iter);
 								}
